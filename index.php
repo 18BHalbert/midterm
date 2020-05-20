@@ -22,10 +22,16 @@ $f3->route('GET|POST /survey', function($f3) {
 
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
-        $_SESSION['name'] = $_POST['name'];
-        $_SESSION['checks'] = $_POST['checks'];
+        if($_POST['name'] == '' || $_POST['checks'] == ''){
+            echo "Please enter something in both fields";
+        }
+        else{
+            $_SESSION['error'] = "";
+            $_SESSION['name'] = $_POST['name'];
+            $_SESSION['checks'] = $_POST['checks'];
 
-        $f3->reroute('summary');
+            $f3->reroute('summary');
+        }
     }
 
     $f3->set('checks', $checks);
