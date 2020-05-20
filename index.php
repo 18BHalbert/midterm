@@ -24,6 +24,8 @@ $f3->route('GET|POST /survey', function($f3) {
     {
         if($_POST['name'] == '' || $_POST['checks'] == ''){
             echo "Please enter something in both fields";
+            $_SESSION['Sname'] = $_POST['name'];
+            $_SESSION['Schecks'] = $_POST['checks'];
         }
         else{
             $_SESSION['error'] = "";
