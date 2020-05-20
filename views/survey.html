@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Midterm Survey</h1>
+
+    <form>
+        <label for="name" class="col-sm-2 control-label">Name</label>
+
+        <div class="col-sm-4">
+            <input class="form-control" type="text" name="name" id="name">
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Check all that apply</label>
+            <div class="col-sm-4">
+                <repeat group="{{ @checks }}" value="{{ @check }}">
+                    <label><input type="checkbox" name="checks[]" value="{{ @check }}">{{ ucfirst(@check) }}</label>
+                </repeat>
+            </div>
+        </div>
+
+        <div class="col-xs-3 ">
+            <input class="form-control btn btn-default"
+                   type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>
