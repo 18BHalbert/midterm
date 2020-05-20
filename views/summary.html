@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Midterm Survey</h1>
+    <h2>Thank you for taking the survey, {{ @SESSION.name }}</h2>
+    <h2>Your Answers: </h2>
+    <check if="{{ isset(@SESSION.checks) }}">
+        <p>I like {{ implode(@SESSION.checks, ", ") }}</p>
+    </check>
+
+</body>
+</html>
